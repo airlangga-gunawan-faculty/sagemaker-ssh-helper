@@ -44,6 +44,7 @@ echo "AWS CLI version (should be v2): $AWS_CLI_VERSION"
 # TODO: consider moving to start-session with AWS-StartNonInteractiveCommand
 
 echo "Running SSM commands at region ${CURRENT_REGION} to copy public key to ${INSTANCE_ID}"
+echo "Revision 2"
 send_command=$(aws ssm send-command \
     --region "${CURRENT_REGION}" \
     --instance-ids "${INSTANCE_ID}" \
