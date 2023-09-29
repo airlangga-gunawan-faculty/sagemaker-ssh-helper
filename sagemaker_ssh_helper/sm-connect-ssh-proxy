@@ -52,9 +52,7 @@ send_command=$(aws ssm send-command \
     --comment "Copy public key for SSH helper" \
     --timeout-seconds 30 \
     --parameters "commands=[
-        'sudo su',
         'mkdir -p /etc/ssh/authorized_keys.d/',
-        'chmod 600 /etc/ssh/authorized_keys.d/',
         'aws s3 cp --recursive \"${SSH_AUTHORIZED_KEYS_PATH}\" /etc/ssh/authorized_keys.d/',
         'ls -la /etc/ssh/authorized_keys.d/',
         'cat /etc/ssh/authorized_keys.d/* > /etc/ssh/authorized_keys',
